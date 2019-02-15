@@ -1,0 +1,623 @@
+{
+	"java": [
+	{
+		"id": "java_xml_external_entity_injection_functions",
+		"name": "JAVA XML外部实体注入漏洞相关敏感函数",
+		"rulelist": [
+			{
+				"type": "1",
+				"data": "new\\s+SAXReader\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "new\\s+SAXBuilder\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "new\\s+SAXParser\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*newSAXParser\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*createXMLReader\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*newDocumentBuilder\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*createUnmarshaller\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "2",
+				"data": "SAXReader"
+			},
+          	{
+				"type": "2",
+				"data": "SAXParser"
+			},
+          	{
+				"type": "2",
+				"data": "DocumentBuilder"
+			},
+			{
+				"type": "2",
+				"data": "XMLStreamReader"
+			},
+			{
+				"type": "2",
+				"data": "SAXBuilder"
+			},
+			{
+				"type": "2",
+				"data": "XMLReader"
+			},
+			{
+				"type": "2",
+				"data": "SAXSource "
+			},
+			{
+				"type": "2",
+				"data": "TransformerFactory "
+			},
+			{
+				"type": "2",
+				"data": "SAXTransformerFactory "
+			},
+			{
+				"type": "2",
+				"data": "SchemaFactory"
+			},
+			{
+				"type": "2",
+				"data": "Unmarshaller"
+			},
+			{
+				"type": "2",
+				"data": "XPathExpression"
+			}
+		]
+	},
+	{
+		"id": "java_deserialization_functions",
+		"name": "JAVA反序列化漏洞相关敏感函数",
+		"rulelist": [
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*createXMLStreamReader\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*readObject\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "JSON\\s*\\.\\s*parseObject\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "ObjectMapper\\s*\\.\\s*readValue\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*fromXML\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*readValue\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*readUnshared\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "Yaml\\s*\\.\\s*load\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "Yaml\\s*\\.\\s*loadType\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "Yaml\\s*\\.\\s*loadAs\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*enableDefaultTyping\\s*\\(.*?\\)"
+			}
+		]
+	},
+	{
+		"id": "java_server_site_request_forgery_functions",
+		"name": "JAVA服务端请求伪造相关敏感函数",
+		"rulelist": [
+          	{
+				"type": "1",
+				"data": "\\w+\\.\\s*openConnection\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "1",
+				"data": "URL\\s*\\.\\s*openStream\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "1",
+				"data": "HttpClient\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "1",
+				"data": "HttpClient\\s*\\.\\s*execute\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "1",
+				"data": "HttpClient\\s*\\.\\s*executeMethod\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "HttpURLConnection\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "1",
+				"data": "HttpURLConnection\\s*\\.\\s*connect\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "1",
+				"data": "HttpURLConnection\\s*\\.\\s*getInputStream\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "new\\s+Socket\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "1",
+				"data": "\\w+\\.\\s*newCall\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "ImageIO\\s*\\.\\s*read\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "ServerSocket\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "InetSocketAddress\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "new\\s+HttpGet\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "new\\s+HttpPost\\s*\\(.*?\\)"
+			},
+			{
+				"type": "2",
+				"data": "DefaultHttpClient"
+			},
+			{
+				"type": "2",
+				"data": "OkHttpClient"
+			}
+		]
+	},
+	{
+		"id": "java_xml_injection_functions",
+		"name": "JAVA XML语法注入相关敏感函数",
+		"rulelist": [
+          	{
+				"type": "2",
+				"data": "StreamSource"
+			},
+          	{
+				"type": "2",
+				"data": "XMLConstants"
+			}
+		]
+	},
+	{
+		"id": "java_file_upload_functions",
+		"name": "JAVA文件上传相关敏感函数",
+		"rulelist": [
+          	{
+				"type": "1",
+				"data": "\\w+\\.\\s*getOriginalFilename\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "1",
+				"data": "FileInputStream\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "2",
+				"data": "UploadHandleServlet"
+			},
+          	{
+				"type": "2",
+				"data": "FileLoadServlet"
+			},
+          	{
+				"type": "2",
+				"data": "DiskFileItemFactory"
+			},
+
+          	{
+				"type": "2",
+				"data": "MultipartRequestEntity"
+			},
+            {
+				"type": "2",
+				"data": "ServletFileUpload"
+			},
+            {
+				"type": "2",
+				"data": "SmartUpload"
+			}
+		]
+	},
+	{
+		"id": "java_file_operation_functions",
+		"name": "JAVA文件读写相关敏感函数",
+		"rulelist": [
+            {
+				"type": "1",
+				"data": "File\\.\\s*write\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "FileUtils\\.\\s*write\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*writeLines\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "PrintWriter\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "FileWriter\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "FilterWriter\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "StringWriter\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "OutputStreamWriter\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "BufferedOutputStream\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "ServletFileUpload\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "RandomAccessFile\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "BufferedWriter\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*listRoots\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*mkdirs?\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*copyInputStreamToFile\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*moveDirectory\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*moveToDirectory\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*moveDirectoryToDirectory\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*moveFile\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*moveFileToDirectory\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*getAbsolutePath\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*createNewFile\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*createTempFile\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "GZIPInputStream\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "new\\s+Scanner\\s*\\(.*?\\)"
+			}
+		]
+	},
+	{
+		"id": "java_zip_unzip_functions",
+		"name": "JAVA文件解压缩相关敏感函数",
+		"rulelist": [
+            {
+				"type": "1",
+				"data": "ZipFile\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "new\\s+ZipOutputStream\\s*\\(.*?\\)"
+			},
+            {
+				"type": "2",
+				"data": "ZipInputStream"
+			}
+		]
+	},
+	{
+		"id": "java_url_redirect_functions",
+		"name": "JAVA URL重定向相关敏感函数",
+		"rulelist": [
+            {
+				"type": "1",
+				"data": "sendRedirect\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "forward\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "redirect\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\.\\s*getHeader\\s*\\(\"Referer\"\\s*\\)"
+			},
+            {
+                "type": "1",
+                "data": "setHeader\\s*\\(\"Location\".*?\\)"
+            },
+ 			{
+				"type": "1",
+				"data": "setHeader\\s*\\(\"refresh.*?\\)"
+			}
+
+		]
+	},
+	{
+		"id": "java_command_execution_functions",
+		"name": "JAVA 命令执行相关敏感函数",
+		"rulelist": [
+			{
+				"type": "1",
+				"data": "getRuntime\\s*\\(.*?\\)\\s*\\.\\s*exec\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*evaluate\\s*\\(.*?\\)"
+			},
+			{
+				"type": "2",
+				"data": "ProcessBuilder"
+			},
+			{
+				"type": "2",
+				"data": "ProcessImpl"
+			}
+
+		]
+	},
+	{
+		"id": "java_code_execution_functions",
+		"name": "JAVA 代码执行相关敏感函数",
+		"rulelist": [
+			{
+				"type": "1",
+				"data": "getSystemJavaCompiler\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*URLClassLoader\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*getSystemClassLoader\\s*\\(.*?\\)"
+			},
+			{
+				"type": "2",
+				"data": "JavaFileObject"
+			}
+		]
+	},
+	{
+		"id": "java_database_operation_functions",
+		"name": "JAVA 数据库操作相关敏感函数",
+		"rulelist": [
+			{
+				"type": "1",
+				"data": "executeQuery\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "prepareStatement\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\".*?order\\s+by.*?\""
+			},
+			{
+				"type": "1",
+				"data": "like.*?%\\$\\{.*?\\}%"
+			},
+			{
+				"type": "1",
+				"data": "(into|where)[^\\$]*(\\$\\{[^,#=\\s]+\\})"
+			},
+			{
+				"type": "1",
+				"data": "\"jdbc:.+://\\(.*?\\)\""
+			}
+		]
+	},
+	{
+		"id": "java_invoke_classloader_functions",
+		"name": "JAVA反射与类加载敏感函数",
+		"rulelist": [
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*invoke\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "Class\\s*\\.\\s*forName\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*loadClass\\s*\\(.*?\\)"
+			},
+			{
+				"type": "2",
+				"data": "ClassLoader"
+			},
+			{
+				"type": "2",
+				"data": "InvokerTransformer"
+			},
+			{
+				"type": "2",
+				"data": "InstantiateTransformer"
+			},
+			{
+				"type": "2",
+				"data": "InstantiateTransformer"
+			}
+		]
+	}
+],
+	"common": [
+	{
+		"id": "common_sensitive_functions",
+		"name": "通用敏感关键词函数查找",
+		"rulelist": [
+			{
+				"type": "1",
+				"data": "\\w+\\.\\s*load\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "\\w+\\.\\s*read\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "1",
+				"data": "\\w+\\.\\s*write\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "\\w+\\.\\s*open\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "\\w+\\.\\s*call\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "\\w+\\.\\s*builder\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "\\w+\\.\\s*reader\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "\\w+\\.\\s*create\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "\\w+\\.\\s*add\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "\\w+\\.\\s*delete\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "\\w+\\.\\s*start\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "\\w+\\.\\s*init\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "\\w+\\.\\s*run\\s*\\(.*?\\)"
+			},
+            {
+				"type": "1",
+				"data": "\\w+\\.\\s*execute\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "1",
+				"data": "\\w+\\.\\s*dump\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "1",
+				"data": "\\w+\\.\\s*getSize\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "connect\\s*\\(.*?\\)"
+			},
+          	{
+				"type": "1",
+				"data": "main\\s*\\(.*?\\)"
+			}
+		]
+	},
+    {
+		"id": "java_auto_binding_functions",
+		"name": "JAVA重绑定相关敏感函数",
+		"rulelist": [
+            {
+				"type": "1",
+				"data": "@SessionAttributes\\s*\\(.*?\\)"
+			},
+			{
+				"type": "1",
+				"data": "@ModelAttribute\\s*\\(.*?\\)"
+			}
+		]
+	}
+
+	]
+
+}
